@@ -15,6 +15,10 @@ export interface Project {
   demoComponent?: string;
 }
 
+export interface ProjectCategory {
+  title: string;
+  projects: Project[];
+}
 
 export interface Skill {
     name: string;
@@ -52,15 +56,17 @@ export interface Experience {
 }
 
 export interface Certification {
-  name: string;
-  issuer: string;
-  date: string;
-  imageUrl: string;
-  verifyUrl: string;
-  certificateUrl?: string; // optional
+    name: string;
+    issuer: string;
+    date: string;
+    imageUrl?: string;
+    verifyUrl: string;
+    isBadge?: boolean;
+    certificateUrl?: string;
 }
 
 export interface CertificationCategory {
     title: string;
     certifications: Certification[];
 }
+

@@ -1,4 +1,4 @@
-import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory, CertificationCategory } from './types';
+import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory, CertificationCategory, ProjectCategory } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', id: 'home' },
@@ -49,7 +49,7 @@ export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
 ];
 
 
-export const PROJECTS: Project[] = [
+const SOFTWARE_PROJECTS: Project[]  = [
   {
     name: 'AI Resume Builder',
     date: '08/2025',
@@ -131,6 +131,36 @@ export const PROJECTS: Project[] = [
   },
   
 ];
+
+const DATA_ANALYSIS_PROJECTS: Project[] = [
+  {
+    name: 'Sales Data Analysis — Excel & Python',
+    date: '07/2025',
+    description: 'An end-to-end data analysis project demonstrating data collection, cleaning, and insight generation using both Excel and Python (pandas) on a real-world sales dataset.',
+    detailedDescription: [
+      { title: 'Project Overview', icon: 'fas fa-chart-line', content: 'This project explores data collection, management, cleaning, and analysis using a real-world sales dataset. The objective was to extract meaningful business insights through both Microsoft Excel and Python (pandas), demonstrating the end-to-end data analysis process from raw data handling to insight generation.' },
+      { title: 'Excel Analysis', icon: 'fas fa-file-excel', content: 'Imported and explored the structured dataset in Excel. Used tools like PivotTables, SUMIF, and Charts to derive insights such as total revenue by product and region, identify top-selling products, and analyze monthly revenue trends.' },
+      { title: 'Python (Pandas) Workflow', icon: 'fab fa-python', content: 'Utilized the pandas library in a Jupyter Notebook to perform data cleaning tasks, including removing duplicates, handling missing values, and converting data types. Calculated key performance indicators (KPIs) like total revenue, average units sold, and identified top-performing sales representatives.' },
+      { title: 'Key Takeaways', icon: 'fas fa-lightbulb', content: 'This project provided a comprehensive comparison of two powerful data analysis tools. It highlighted Excel\'s strength in quick, visual data exploration and Python\'s power in reproducible, scalable data cleaning and complex calculations.' }
+    ],
+    technologies: ['Excel', 'Python', 'Pandas', 'Jupyter Notebook'],
+    githubUrl: 'https://github.com/katlegoxoxo',
+    imageUrl: 'https://picsum.photos/seed/sales-analysis/800/600',
+  }
+];
+
+export const PROJECT_CATEGORIES: ProjectCategory[] = [
+  {
+    title: 'Software & AI Development',
+    projects: SOFTWARE_PROJECTS,
+  },
+  {
+    title: 'Data Analysis',
+    projects: DATA_ANALYSIS_PROJECTS,
+  },
+];
+
+export const PROJECTS: Project[] = [...SOFTWARE_PROJECTS, ...DATA_ANALYSIS_PROJECTS];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
 
