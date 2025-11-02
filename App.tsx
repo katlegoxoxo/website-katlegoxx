@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -15,27 +16,24 @@ import { AnimatePresence } from 'framer-motion';
 import type { Project, EducationItem, Certification } from './types';
 import Modal from './components/Modal';
 import CertificateModal from './components/CertificateModal';
-import ImageViewerModal from './components/ImageViewerModal';
 
 const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [viewableCertificate, setViewableCertificate] = useState<{ url: string, title: string } | null>(null);
-  const [viewableImageCertificate, setViewableImageCertificate] = useState<Certification | null>(null);
+  const [viewableCertificate, setViewableCertificate] = useState<{ title: string; imageUrl?: string; pdfUrl?: string; verifyUrl?: string; } | null>(null);
 
   const handleViewEducationCertificate = (item: EducationItem) => {
     if (item.certificateUrl) {
-      setViewableCertificate({ url: item.certificateUrl, title: item.degree });
+      setViewableCertificate({ pdfUrl: item.certificateUrl, title: item.degree });
     }
   };
 
   const handleViewCertification = (cert: Certification) => {
-    if (cert.imageUrl) {
-      setViewableImageCertificate(cert);
-    } else if (cert.certificateUrl) {
-      setViewableCertificate({ url: cert.certificateUrl, title: cert.name });
-    } else if (cert.verifyUrl && cert.verifyUrl !== '#') {
-      window.open(cert.verifyUrl, '_blank', 'noopener,noreferrer');
-    }
+    setViewableCertificate({ 
+      title: cert.name,
+      imageUrl: cert.imageUrl,
+      pdfUrl: cert.certificateUrl,
+      verifyUrl: cert.verifyUrl 
+    });
   };
 
   return (
@@ -48,10 +46,10 @@ const App: React.FC = () => {
           <Hero />
           <About id={NAV_LINKS[1].id} title="About" />
           <Projects id={NAV_LINKS[2].id} title="Projects" onProjectSelect={setSelectedProject} />
-          <Skills id={NAV_LINKS[3].id} title="Skills & Tools" />
+          <Skills id={NAV_LINKS[3].id} title="Skills " />
           <Education id={NAV_LINKS[4].id} title="Education" onCertificateSelect={handleViewEducationCertificate} />
           <Experience id={NAV_LINKS[5].id} title="Experience" />
-          <Certifications id={NAV_LINKS[6].id} title="Certifications & Badges" onViewCertificate={handleViewCertification} />
+          <Certifications id={NAV_LINKS[6].id} title="Certifications" onViewCertificate={handleViewCertification} />
           <Contact id={NAV_LINKS[7].id} title="Get In Touch" />
         </main>
         <Footer />
@@ -63,16 +61,12 @@ const App: React.FC = () => {
         )}
         {viewableCertificate && (
           <CertificateModal 
-            url={viewableCertificate.url}
             title={viewableCertificate.title}
+            imageUrl={viewableCertificate.imageUrl}
+            pdfUrl={viewableCertificate.pdfUrl}
+            verifyUrl={viewableCertificate.verifyUrl}
             onClose={() => setViewableCertificate(null)}
           />
-        )}
-        {viewableImageCertificate && (
-            <ImageViewerModal 
-                certificate={viewableImageCertificate}
-                onClose={() => setViewableImageCertificate(null)}
-            />
         )}
       </AnimatePresence>
     </div>

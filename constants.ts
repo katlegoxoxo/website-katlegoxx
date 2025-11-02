@@ -133,8 +133,22 @@ const SOFTWARE_PROJECTS: Project[]  = [
 ];
 
 const DATA_ANALYSIS_PROJECTS: Project[] = [
+    {
+    name: 'Student Performance Data Analysis',
+    date: '06/2024',
+    description: "Analysis of student performance metrics using Python to assess data quality, summarize statistics, and visualize key distributions.",
+    detailedDescription: [
+      { title: 'Technologies Used', icon: 'fas fa-tools', content: 'The analysis was conducted in a Jupyter Notebook environment, utilizing Python 3 with core data science libraries: Pandas for data manipulation, and Matplotlib/Seaborn for creating insightful visualizations.' },
+      { title: 'Data Readiness & Quality', icon: 'fas fa-check-double', content: 'The initial and most critical phase involved a thorough data quality check. This included identifying and handling missing values, removing duplicate entries, and ensuring all data types were correct for accurate statistical analysis. A diagnostics table was created to summarize the health of the dataset.' },
+      { title: 'Descriptive Statistics & Distributions', icon: 'fas fa-chart-bar', content: 'Computed key summary statistics (mean, median, standard deviation, etc.) to understand the central tendency and spread of the data. Histograms and boxplots were generated for variables like Final Score, Study Hours, and Attendance Rate to visually inspect their distributions, skewness, and identify outliers.' },
+      { title: 'Insights & Learnings', icon: 'fas fa-lightbulb', content: 'The analysis revealed a mild right skew in final scores and identified outliers in study hours, indicating varied student habits. The project reinforced the foundational data analysis workflow: inspect → clean → describe → visualize → interpret. It highlighted how visualizations can quickly reveal patterns that raw statistics might obscure.' }
+    ],
+    technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'],
+    githubUrl: 'https://github.com/katlegoxoxo/Student-Performance-Data-Analysis',
+    imageUrl: 'https://picsum.photos/seed/studentperf/800/600',
+  },
   {
-    name: 'Sales Data Analysis — Excel & Python',
+    name: 'Sales Data Analysis',
     date: '07/2025',
     description: 'An end-to-end data analysis project demonstrating data collection, cleaning, and insight generation using both Excel and Python (pandas) on a real-world sales dataset.',
     detailedDescription: [
@@ -179,15 +193,19 @@ export const EDUCATION: EducationItem[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
-    role: 'Digital Associate',
+    role: 'Data Analyst Intern',
     company: 'Capaciti',
     dateRange: 'July 2025 - Present',
     description: [
-      'Actively engaged in continuous learning, focusing on Python and the principles of Artificial Intelligence to contribute to modern, data-driven projects.',
-      'Collaborating with teams to support digital initiatives and apply developing technical skills in a professional environment.'
+      'Perform exploratory data analysis using Python, Pandas, and Jupyter Notebook to identify patterns and extract insights from datasets.',
+      'Clean, transform, and validate data to improve accuracy and reliability for reporting and decision-making.',
+      'Develop visualizations and reports in Excel and Jupyter to communicate findings in a clear and actionable way.',
+      'Collaborate with team members to support data-driven initiatives and contribute to ongoing analytics projects.',
+      'Continuously strengthening analytical and problem-solving skills through hands-on project work and real-world data challenges.'
     ]
   }
 ];
+
 
 export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
   {
