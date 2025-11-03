@@ -135,7 +135,7 @@ const SOFTWARE_PROJECTS: Project[]  = [
 const DATA_ANALYSIS_PROJECTS: Project[] = [
     {
     name: 'Student Performance Data Analysis',
-    date: '06/2024',
+    date: '10/2025',
     description: "Analysis of student performance metrics using Python to assess data quality, summarize statistics, and visualize key distributions.",
     detailedDescription: [
       { title: 'Technologies Used', icon: 'fas fa-tools', content: 'The analysis was conducted in a Jupyter Notebook environment, utilizing Python 3 with core data science libraries: Pandas for data manipulation, and Matplotlib/Seaborn for creating insightful visualizations.' },
@@ -143,13 +143,13 @@ const DATA_ANALYSIS_PROJECTS: Project[] = [
       { title: 'Descriptive Statistics & Distributions', icon: 'fas fa-chart-bar', content: 'Computed key summary statistics (mean, median, standard deviation, etc.) to understand the central tendency and spread of the data. Histograms and boxplots were generated for variables like Final Score, Study Hours, and Attendance Rate to visually inspect their distributions, skewness, and identify outliers.' },
       { title: 'Insights & Learnings', icon: 'fas fa-lightbulb', content: 'The analysis revealed a mild right skew in final scores and identified outliers in study hours, indicating varied student habits. The project reinforced the foundational data analysis workflow: inspect → clean → describe → visualize → interpret. It highlighted how visualizations can quickly reveal patterns that raw statistics might obscure.' }
     ],
-    technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'],
+    technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter Notebook'],
     githubUrl: 'https://github.com/katlegoxoxo/Student-Performance-Data-Analysis',
     imageUrl: 'https://picsum.photos/seed/studentperf/800/600',
   },
   {
     name: 'Sales Data Analysis',
-    date: '07/2025',
+    date: '10/2025',
     description: 'An end-to-end data analysis project demonstrating data collection, cleaning, and insight generation using both Excel and Python (pandas) on a real-world sales dataset.',
     detailedDescription: [
       { title: 'Project Overview', icon: 'fas fa-chart-line', content: 'This project explores data collection, management, cleaning, and analysis using a real-world sales dataset. The objective was to extract meaningful business insights through both Microsoft Excel and Python (pandas), demonstrating the end-to-end data analysis process from raw data handling to insight generation.' },
