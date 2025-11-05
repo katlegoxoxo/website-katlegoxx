@@ -89,7 +89,7 @@ const Preloader: React.FC = () => {
                 animate={{ opacity: 1, filter: 'blur(0px)', transition: { duration: 1, delay: 0.2 } }}
                 className="font-mono text-3xl md:text-5xl font-bold tracking-widest text-center"
             >
-                <ScrambleText text="KATLEGOXX" />
+                <ScrambleText text="HIMOTHY" />
             </motion.div>
         </motion.div>
     );
